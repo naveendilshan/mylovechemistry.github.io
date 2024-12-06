@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naveen & Sasinika - Our Love Story</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+        }
+        header {
+            text-align: center;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        header h1 {
+            font-size: 3em;
+        }
+        header p {
+            font-size: 1.2em;
+        }
+
+        /* Background styles */
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .overlay {
+            background: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Section styles */
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+        h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.2em;
+        }
+
+        /* Countdown styles */
+        .countdown {
+            font-size: 2em;
+            background: #ff6f61;
+            padding: 10px;
+            margin: 20px auto;
+            display: inline-block;
+            border-radius: 10px;
+            animation: glow 2s infinite alternate;
+        }
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 5px #ff6f61;
+            }
+            to {
+                box-shadow: 0 0 20px #ff6f61;
+            }
+        }
+
+        /* Gallery styles */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        .gallery img {
+            width: 250px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px #ff6f61;
+        }
+
+        /* Decorative elements */
+        .decorative {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .decorative .heart {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: #ff6f61;
+            clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 50% 82%, 18% 100%, 0% 38%);
+            animation: float 5s infinite;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        .decorative .heart:nth-child(2) {
+            left: 20%;
+            animation-delay: 1s;
+        }
+        .decorative .heart:nth-child(3) {
+            left: 40%;
+            animation-delay: 2s;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Button styles */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #ff6f61;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: background 0.3s ease;
+        }
+        .btn:hover {
+            background: #e64e4e;
+        }
+    </style>
+</head>
+<body>
+<video autoplay muted loop class="background-video">
+        <source src="romantic-background.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+    <div class="decorative">
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+    </div>
+    <header>
+        <h1>Naveen & Sasinika</h1>
+        <p>A Journey of Love Since August 24, 2023</p>
+    </header>
+    <section>
+        <h2>About Us</h2>
+        <p>We are Naveen Dilshan Kuruppu and Sasinika Heshani, a young couple who met in a physics class at Rotary Nugegoda. 
+        Our love story began on August 24, 2023, and we've been creating beautiful memories ever since!</p>
+        <p>We enjoy spending time together and exploring places like film halls, One Galle Face, and Beddagana Water Park.</p>
+    </section>
+    <section>
+        <h2>Our Birthdays</h2>
+        <ul>
+            <li><strong>Naveen:</strong> March 20, 2003</li>
+            <li><strong>Sasinika:</strong> September 22, 2003</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Photo Gallery</h2>
+        <div class="gallery">
+            <img src="Picsart_24-07-31_22-48-10-056.jpg" alt="Memory 1">
+            <img src="Picsart_24-03-31_11-27-18-206.jpg" alt="Memory 2">
+            <img src="Picsart_24-03-10_21-19-03-898.jpg" alt="Memory 3">
+        </div>
+    </section>
+<section>
+        <h2>Leave a Message</h2>
+        <div class="comments">
+            <textarea placeholder="Leave a comment..."></textarea>
+            <button>Submit</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>Forever in love, Naveen & Sasinika ❤️</p>
+    </footer>
+
+    <!-- Countdown Script -->
+    <script>
+        // Countdown to next anniversary (24th August 2025)
+        function updateCountdown() {
+            const anniversaryDate = new Date("August 24, 2025 00:00:00").getTime();
+            const now = new Date().getTime();
+            const timeLeft = anniversaryDate - now;
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown-timer").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+
+        setInterval(updateCountdown, 1000);
+    </script>
+
+    <footer>
+        <p>Forever in love❤️</p>
+    </footer>
+</body>
+</html>
