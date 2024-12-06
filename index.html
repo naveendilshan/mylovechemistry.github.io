@@ -3,165 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naveen & Sasinika - Our Love Story</title>
+    <title>Naveen & Sasinika's Love Story</title>
     <style>
-        /* General styles */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #fff;
-        }
-        header {
-            text-align: center;
-            padding: 30px;
-            background: rgba(0, 0, 0, 0.6);
-        }
-        header h1 {
-            font-size: 3em;
-        }
-        header p {
-            font-size: 1.2em;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Parisienne&family=Poppins:wght@300;400;600&display=swap');
 
-        /* Background styles */
-        .background-video {
+        /* Background Video */
+        #video-background {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
             z-index: -1;
-        }
-        .overlay {
-            background: rgba(0, 0, 0, 0.5);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            object-fit: cover;
         }
 
-        /* Section styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, #ffe3e3, #ffb3b3);
+            color: #333;
+        }
+
+        header {
+            background: rgba(255, 111, 97, 0.9);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            font-family: 'Parisienne', cursive;
+            border-radius: 10px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin: 10px 0 0;
+        }
+
         section {
             padding: 20px;
+            margin: 20px auto;
+            max-width: 900px;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+            animation: slideIn 2s ease-in-out;
+        }
+
+        h2 {
+            text-align: center;
+            font-family: 'Parisienne', cursive;
+            color: #ff6f61;
+            font-size: 2.5em;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        p, ul {
+            font-size: 1.1em;
+            line-height: 1.6;
             text-align: center;
         }
-        h2 {
-            font-size: 2em;
-            margin-bottom: 10px;
-        }
-        p {
-            font-size: 1.2em;
+
+        ul {
+            list-style: none;
+            padding: 0;
         }
 
-        /* Countdown styles */
-        .countdown {
-            font-size: 2em;
-            background: #ff6f61;
-            padding: 10px;
-            margin: 20px auto;
-            display: inline-block;
-            border-radius: 10px;
-            animation: glow 2s infinite alternate;
-        }
-        @keyframes glow {
-            from {
-                box-shadow: 0 0 5px #ff6f61;
-            }
-            to {
-                box-shadow: 0 0 20px #ff6f61;
-            }
+        ul li {
+            margin: 5px 0;
         }
 
-        /* Gallery styles */
         .gallery {
             display: flex;
             flex-wrap: wrap;
+            gap: 20px;
             justify-content: center;
-            gap: 15px;
+            padding-top: 20px;
         }
+
         .gallery img {
-            width: 250px;
+            width: 200px;
             height: 200px;
             object-fit: cover;
-            border-radius: 10px;
+            border-radius: 16px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
         .gallery img:hover {
             transform: scale(1.1);
-            box-shadow: 0 0 15px #ff6f61;
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+            border: 3px solid #ff6f61;
         }
 
-        /* Decorative elements */
-        .decorative {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            overflow: hidden;
-            z-index: 1;
-        }
-        .decorative .heart {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            background: #ff6f61;
-            clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 50% 82%, 18% 100%, 0% 38%);
-            animation: float 5s infinite;
-        }
-        @keyframes float {
-            0% {
-                transform: translateY(0) rotate(0deg);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-100vh) rotate(360deg);
-                opacity: 0;
-            }
-        }
-        .decorative .heart:nth-child(2) {
-            left: 20%;
-            animation-delay: 1s;
-        }
-        .decorative .heart:nth-child(3) {
-            left: 40%;
-            animation-delay: 2s;
-        }
-
-        /* Footer */
         footer {
-            background: rgba(0, 0, 0, 0.6);
-            padding: 10px;
             text-align: center;
+            padding: 15px;
+            background-color: #ff6f61;
+            color: white;
+            font-size: 1.2em;
+            font-family: 'Parisienne', cursive;
+            margin-top: 30px;
+            animation: fadeIn 2s ease-in-out;
         }
 
-        /* Button styles */
-        .btn {
-            display: inline-block;
+        /* Countdown Timer */
+        #countdown {
+            font-size: 1.5em;
+            color: #ff6f61;
+            font-weight: bold;
+            text-align: center;
+            padding: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Button */
+        .button {
+            display: block;
+            margin: 20px auto;
             padding: 10px 20px;
-            background: #ff6f61;
-            color: #fff;
+            font-size: 1.1em;
+            background-color: #ff6f61;
+            color: white;
             border: none;
             border-radius: 5px;
+            cursor: pointer;
             text-decoration: none;
-            font-size: 1.2em;
-            transition: background 0.3s ease;
+            transition: background-color 0.3s ease;
         }
-        .btn:hover {
-            background: #e64e4e;
+
+        .button:hover {
+            background-color: #ff4a3f;
+        }
+
+        /* Comments Section */
+        .comments {
+            margin-top: 40px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .comments textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            border: 2px solid #ff6f61;
+            border-radius: 5px;
+            resize: none;
+        }
+
+        .comments button {
+            background-color: #ff6f61;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .comments button:hover {
+            background-color: #ff4a3f;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(0); }
         }
     </style>
 </head>
 <body>
 
+<!-- Background Video -->
+<video id="video-background" autoplay loop muted>
+    <source src="https://www.videvo.net/videvo_files/converted/2016_09/preview/160907_C_Hearts_BG_06.mp430572.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+    </video>
+
     <header>
-        <h1>Naveen & Sasinika</h1>
-        <p>A Journey of Love Since August 24, 2023</p>
+        <h1>Naveen & Sasinika's Love Story</h1>
+        <p>Started on 24th August 2023 | Same age, same hearts, forever in love ❤️</p>
     </header>
+
+    <!-- Countdown to Next Anniversary -->
+    <section>
+        <div id="countdown">
+            <p>Next Anniversary: <span id="countdown-timer"></span></p>
+        </div>
+    </section>
+
     <section>
         <h2>About Us</h2>
         <p>We are Naveen Dilshan Kuruppu and Sasinika Heshani, a young couple who met in a physics class at Rotary Nugegoda. 
@@ -175,6 +222,8 @@
             <li><strong>Sasinika:</strong> September 22, 2003</li>
         </ul>
     </section>
+
+   
     <section>
         <h2>Photo Gallery</h2>
         <div class="gallery">
@@ -183,7 +232,8 @@
             <img src="Picsart_24-03-10_21-19-03-898.jpg" alt="Memory 3">
         </div>
     </section>
-<section>
+
+    <section>
         <h2>Leave a Message</h2>
         <div class="comments">
             <textarea placeholder="Leave a comment..."></textarea>
@@ -214,8 +264,5 @@
         setInterval(updateCountdown, 1000);
     </script>
 
-    <footer>
-        <p>Forever in love❤️</p>
-    </footer>
 </body>
 </html>
